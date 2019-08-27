@@ -284,7 +284,8 @@ class Configuration {
 
             soap.createClientAsync(wsdlPath, {
                 attributesKey: "$attributes",
-                namespaceArrayElements: false
+                namespaceArrayElements: false,
+                wsdl_options: { fixedPath: true }
             }).then((client) => {
 
                 _.assign(client.wsdl.definitions.xmlns, _getNameSpaces(this.configuration));
